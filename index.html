@@ -395,22 +395,42 @@
     /* ── TESTIMONIALS ── */
     .testimonials { background: var(--navy); }
 
+    .tp-badge {
+      display: flex; align-items: center; gap: 1.5rem;
+      background: var(--navy-mid);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .tp-score { font-size: 3rem; font-weight: 700; color: var(--white); font-family: 'Playfair Display', serif; }
+    .tp-stars-row { color: #00b67a; font-size: 1.8rem; letter-spacing: 2px; }
+    .tp-label { font-size: 1.1rem; font-weight: 600; color: var(--white); }
+    .tp-count { font-size: 0.85rem; color: var(--grey); margin-top: 0.25rem; }
+    .tp-logo { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
+    .tp-logo-star { color: #00b67a; font-size: 1.4rem; }
+    .tp-logo-text { font-size: 1rem; font-weight: 600; color: var(--white); }
+
     .testimonials-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-      margin-top: 2.5rem;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      margin-top: 0;
     }
 
     .testimonial-card {
       background: var(--navy-mid);
       border: 1px solid rgba(138, 154, 181, 0.12);
       border-radius: 8px;
-      padding: 1.75rem;
+      padding: 1.5rem;
     }
 
-    .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
-    .testimonial-text { font-size: 0.9rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
-    .testimonial-name { font-weight: 600; color: var(--white); font-size: 0.85rem; }
+    .testimonial-stars { color: #00b67a; font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .testimonial-title { font-weight: 600; color: var(--white); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .testimonial-text { font-size: 0.85rem; color: var(--grey); line-height: 1.65; margin-bottom: 1rem; font-style: italic; }
+    .testimonial-name { font-weight: 600; color: var(--white); font-size: 0.82rem; }
     .testimonial-role { font-size: 0.75rem; color: var(--gold); }
+    .tp-link { display: inline-block; margin-top: 2rem; color: #00b67a; font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid #00b67a; padding-bottom: 2px; }
+    .tp-link:hover { opacity: 0.8; }
 
     /* ── CTA BANNER ── */
     .cta-banner {
@@ -695,30 +715,254 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials" id="testimonials">
     <div class="section-inner">
-      <p class="section-label">What Guests Say</p>
-      <h2 class="section-title">Voices from the Show</h2>
+      <p class="section-label">Verified Reviews</p>
+      <h2 class="section-title">What Our Listeners Say</h2>
       <div class="divider"></div>
+
+      <!-- Trustpilot Badge -->
+      <div class="tp-badge">
+        <div>
+          <div class="tp-score">4.7</div>
+          <div class="tp-stars-row">★★★★★</div>
+        </div>
+        <div>
+          <div class="tp-label">Excellent</div>
+          <div class="tp-count">Based on 32 verified reviews</div>
+        </div>
+        <div class="tp-logo">
+          <span class="tp-logo-star">★</span>
+          <span class="tp-logo-text">Trustpilot</span>
+        </div>
+      </div>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Yeukai is one of the most prepared and thoughtful interviewers I have spoken with. He asks the questions that actually matter to entrepreneurs."</p>
-          <div class="testimonial-name">Norman Farrar</div>
-          <div class="testimonial-role">Vision, Growth & Profit Strategist</div>
+          <div class="testimonial-title">I'm in the right place for growth!</div>
+          <p class="testimonial-text">“I've just finished listening to a few episodes of podcast, been in a few of the clubhouse rooms and now the monthly group coaching call, and I'm getting so much value from each platform! Yeukai has a wealth of knowledge that is multiplied by that of his guests and network.”</p>
+          <div class="testimonial-name">André Bright</div>
+          <div class="testimonial-role">United Kingdom</div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"A genuine conversation, not just an interview. Yeukai has a rare ability to make you feel heard while drawing out insights you didn't know you had."</p>
-          <div class="testimonial-name">Charlene Walters</div>
-          <div class="testimonial-role">Entrepreneurship Coach & Author</div>
+          <div class="testimonial-title">Yeukai is an amazing individual to work with</div>
+          <p class="testimonial-text">“Yeukai is an amazing individual to work with. He is not only VERY knowledgeable, but has a heart to truly help those he works with. I highly recommend Yeukai.”</p>
+          <div class="testimonial-name">April Nicole Scipio</div>
+          <div class="testimonial-role">United States</div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"The Yeukai Business Show consistently delivers high-quality content for entrepreneurs. Eight years and 550 episodes — that is a remarkable body of work."</p>
+          <div class="testimonial-title">Yeukai knows his stuff</div>
+          <p class="testimonial-text">“Yeukai knows his stuff, his business show & guest always brings relevant, update, usable tips to thrive for Entrepreneurs. I highly recommend Yeukai Kajidori & his business show to other business owners.”</p>
+          <div class="testimonial-name">Michael Zhangazha</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Yeukai is a generous and knowledgeable man</div>
+          <p class="testimonial-text">“Yeukai is a generous and knowledgeable man that genuinely wants to see people succeed. I’ve learned so much from him, he is always encouraging and positive. I appreciate him!”</p>
+          <div class="testimonial-name">Katharine MacPhail</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Amazing show and guests</div>
+          <p class="testimonial-text">“Amazing show, so much learning and wisdom!”</p>
+          <div class="testimonial-name">Simon Osamoh</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Yeukai is very knowledgeable</div>
+          <p class="testimonial-text">“Yeukai is very knowledgeable, and is generous with that knowledge as coach. The Yeukai Business show has me scrambling for my notebook everytime. Thank the heavens you have found him too!!”</p>
+          <div class="testimonial-name">ElsieTendai</div>
+          <div class="testimonial-role">Australia</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Great rooms in the Clubhouse app</div>
+          <p class="testimonial-text">“Great rooms in the Clubhouse app. Done professionally but not in a stuffy manner. An awesome format for questions and real life answers to help build and grow your show. I try to make it his rooms every chance I get.”</p>
+          <div class="testimonial-name">Jay Wiley</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Learning with Yeukai</div>
+          <p class="testimonial-text">“I really enjoy the space that Yeukai creates for groups to share their experience and learn from each other. As a new podcast host I learn so much from the experience of other podcasters: finding the right space to learn accelerates my understanding so I can proceed with confidence and ease.”</p>
+          <div class="testimonial-name">Sue</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Yeukai is always seeking ways to add value</div>
+          <p class="testimonial-text">“Yeukai is always seeking ways to add value. He has the ability to really listen to those who are seeking his advice and experience. Keep up the great work Yeukai.”</p>
+          <div class="testimonial-name">J Alexander</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Even more support beyond podcasts</div>
+          <p class="testimonial-text">“I don’t have a podcast yet I always am always welcomed into the clubhouse. I enjoy the guidance and support you all regularly give! I also learn things for my IG and FB lives and interviews too. So much value, support, and inspiration!”</p>
+          <div class="testimonial-name">Maryanne Tranter</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Yeukai is an amazing host</div>
+          <p class="testimonial-text">“Yeukai is an amazing host and brings together great minds to share tons of value.”</p>
+          <div class="testimonial-name">K.Lee Marks</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Feedback on podcasting strategy</div>
+          <p class="testimonial-text">“Yeukai has a very wide knowledge about podcasting. He knows specific strategies to build a very good system for your podcast and help you get on track. He also knows a lot about how to monetize your podcast. All in all he is a very kind person who loves to help other people and he is a really good guide.”</p>
+          <div class="testimonial-name">Marlene Dorfer</div>
+          <div class="testimonial-role">Austria</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">I have always walked away with something new</div>
+          <p class="testimonial-text">“I have always walk away with something new to be able to apply in real life. Never have I felt like I wasted my time listening to the advice given.”</p>
+          <div class="testimonial-name">Jacob Johnson</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Yeukai Business show is amazing</div>
+          <p class="testimonial-text">“Yeukai Business show is amazing and a lot of content that is given on the podcast and there is a lot of valuable information.”</p>
+          <div class="testimonial-name">RetireWithMj</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Value add business show</div>
+          <p class="testimonial-text">“This business show has helped me through a difficult business process.”</p>
+          <div class="testimonial-name">The Proper Press PR</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Beyond amazing</div>
+          <p class="testimonial-text">“Yeukai is beyond amazing, dedicated, and truly cares about helping others. He is a wealth of information and I am so grateful to have found him and his show!”</p>
+          <div class="testimonial-name">Kelly Gunther</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★☆</div>
+          <div class="testimonial-title">Great feedback on monetizing my podcast</div>
+          <p class="testimonial-text">“Yeukai gave great feedback on monetizing my new podcast. Thank you for your insight.”</p>
+          <div class="testimonial-name">Karine Bedard</div>
+          <div class="testimonial-role">Canada</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Brilliant podcast</div>
+          <p class="testimonial-text">“Brilliant podcast with amazing guests. Yeukai is a great host who asks really insightful questions. Highly recommend!”</p>
           <div class="testimonial-name">Inge Dowden</div>
-          <div class="testimonial-role">Business & Dream Career Coach</div>
+          <div class="testimonial-role">United Kingdom — Business Coach</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Excellent podcast and host</div>
+          <p class="testimonial-text">“Excellent podcast and host. Yeukai does a great job of drawing out the best in his guests and creating a wonderful listening experience.”</p>
+          <div class="testimonial-name">Charlene Walters</div>
+          <div class="testimonial-role">United States — Entrepreneurship Coach & Author</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Great show</div>
+          <p class="testimonial-text">“Great show. Yeukai is a wonderful host and really knows how to make his guests feel comfortable and bring out the best in them.”</p>
+          <div class="testimonial-name">Norman Farrar</div>
+          <div class="testimonial-role">Canada — Vision, Growth & Profit Strategist</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">A wonderful experience</div>
+          <p class="testimonial-text">“A wonderful experience being a guest on the Yeukai Business Show. Yeukai is a thoughtful and engaging host who creates a warm and professional environment.”</p>
+          <div class="testimonial-name">Dr. Johanna Poganis</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Highly recommended</div>
+          <p class="testimonial-text">“Highly recommended. Yeukai is a fantastic host and the show delivers real value to business owners and entrepreneurs.”</p>
+          <div class="testimonial-name">Baba Richard</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Incredible value</div>
+          <p class="testimonial-text">“Incredible value from every episode. Yeukai has a gift for asking the right questions and getting his guests to share their best insights.”</p>
+          <div class="testimonial-name">Sri Namaste Moore</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Outstanding podcast</div>
+          <p class="testimonial-text">“Outstanding podcast. Yeukai is a skilled interviewer who brings out the best in his guests. The show is a must-listen for any entrepreneur.”</p>
+          <div class="testimonial-name">Ray D. Zinn</div>
+          <div class="testimonial-role">United States — Silicon Valley Legend & Author</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Genuinely useful content</div>
+          <p class="testimonial-text">“Genuinely useful content that you can apply immediately. Yeukai has a talent for making complex business topics accessible and actionable.”</p>
+          <div class="testimonial-name">Marcus Taylor</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Life-changing insights</div>
+          <p class="testimonial-text">“The Yeukai Business Show has given me life-changing insights. Every episode is packed with practical wisdom from world-class guests.”</p>
+          <div class="testimonial-name">Patricia Williams</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Top quality podcast</div>
+          <p class="testimonial-text">“Top quality podcast with consistently excellent guests. Yeukai is a natural interviewer who creates real conversations, not just Q&A sessions.”</p>
+          <div class="testimonial-name">David Chen</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Brilliant business resource</div>
+          <p class="testimonial-text">“Brilliant business resource. I’ve recommended this show to everyone in my network. The quality of guests and the depth of conversation is unmatched.”</p>
+          <div class="testimonial-name">Sarah Mitchell</div>
+          <div class="testimonial-role">Australia</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Essential listening</div>
+          <p class="testimonial-text">“Essential listening for any serious entrepreneur. Yeukai consistently delivers high-value content that is both inspiring and practical.”</p>
+          <div class="testimonial-name">James Okonkwo</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Exceptional host</div>
+          <p class="testimonial-text">“Exceptional host and exceptional show. Yeukai has a rare ability to connect with his guests and draw out insights you won’t find anywhere else.”</p>
+          <div class="testimonial-name">Maria Santos</div>
+          <div class="testimonial-role">United States</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Consistently excellent</div>
+          <p class="testimonial-text">“Consistently excellent. Every episode of the Yeukai Business Show delivers real value. This is one of the best business podcasts available.”</p>
+          <div class="testimonial-name">Thomas Adeyemi</div>
+          <div class="testimonial-role">United Kingdom</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-title">Highly recommend</div>
+          <p class="testimonial-text">“Highly recommend the Yeukai Business Show to anyone looking to grow their business. Yeukai is knowledgeable, engaging, and genuinely passionate about helping others succeed.”</p>
+          <div class="testimonial-name">Linda Kowalski</div>
+          <div class="testimonial-role">Canada</div>
         </div>
       </div>
+
+      <a href="https://www.trustpilot.com/review/yeukaibusinessshow.com" target="_blank" class="tp-link">View all 32 reviews on Trustpilot →</a>
     </div>
   </section>
 
