@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yeukai Business Show | UK's Premier Business Podcast</title>
+  <meta name="description" content="550+ interviews with global business leaders. Hosted by Yeukai Kajidori — entrepreneur, author, and founder of The Kajidori Collective." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #112240;
+      --navy-light: #1a3560;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #ffffff;
+      --off-white: #f4f1eb;
+      --grey: #8a9ab5;
+      --text: #e8edf5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900; font-size: 1.1rem;
+      color: var(--navy);
+    }
+
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .nav-logo-text span { color: var(--gold); display: block; font-size: 0.7rem; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--grey); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0d1f3c 100%);
+      display: flex; align-items: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
+    }
+
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before { content: '★'; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--grey);
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-stat-label {
+      font-size: 0.75rem; color: var(--grey);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.875rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      color: var(--gold);
+      padding: 0.875rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201, 168, 76, 0.08); }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex; justify-content: center;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      width: 380px; height: 480px;
+    }
+
+    .hero-image-frame::before {
+      content: '';
+      position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      opacity: 0.4;
+    }
+
+    .hero-image-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      border-radius: 4px;
+      filter: grayscale(20%);
+    }
+
+    .hero-rank-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--gold);
+      color: var(--navy);
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-weight: 900;
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.4);
+    }
+
+    .hero-rank-badge .rank-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; line-height: 1;
+    }
+
+    .hero-rank-badge .rank-text {
+      font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; line-height: 1.2;
+    }
+
+    /* ── MEDIA BAR ── */
+    .media-bar {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 1.5rem 2rem;
+    }
+
+    .media-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .media-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--grey); white-space: nowrap;
+      padding-right: 1rem;
+      border-right: 1px solid rgba(138, 154, 181, 0.3);
+    }
+
+    .media-logos {
+      display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+    }
+
+    .media-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .media-logo:hover { color: rgba(255,255,255,0.8); }
+    .media-logo.bbc { font-size: 1.3rem; }
+    .media-logo.sky { font-size: 1.2rem; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5rem 2rem; }
+
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700; color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .section-body {
+      font-size: 1rem; color: var(--grey);
+      max-width: 640px; margin-bottom: 2.5rem;
+    }
+
+    .divider {
+      width: 60px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--navy-mid); }
+
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: center;
+    }
+
+    .about-credentials {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .credential-card {
+      background: rgba(201, 168, 76, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    .credential-card .cred-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .credential-card .cred-title { font-size: 0.8rem; font-weight: 600; color: var(--gold); margin-bottom: 0.25rem; }
+    .credential-card .cred-body { font-size: 0.75rem; color: var(--grey); }
+
+    .about-quote {
+      background: rgba(201, 168, 76, 0.06);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem;
+      border-radius: 0 6px 6px 0;
+      margin-top: 2rem;
+      font-style: italic;
+      color: var(--off-white);
+      font-size: 1rem;
+    }
+
+    /* ── EPISODES ── */
+    .episodes { background: var(--navy); }
+
+    .episodes-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .episode-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(138, 154, 181, 0.15);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .episode-card:hover { border-color: rgba(201, 168, 76, 0.4); transform: translateY(-3px); }
+
+    .ep-num { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .ep-title { font-weight: 600; color: var(--white); font-size: 0.95rem; margin-bottom: 0.5rem; line-height: 1.4; }
+    .ep-guest { font-size: 0.8rem; color: var(--grey); }
+    .ep-topic { font-size: 0.75rem; color: var(--gold); margin-top: 0.75rem; }
+
+    .episodes-cta { text-align: center; margin-top: 2.5rem; }
+
+    /* ── PLATFORMS ── */
+    .platforms {
+      background: var(--navy-mid);
+      padding: 3rem 2rem;
+    }
+
+    .platforms-inner {
+      max-width: 1200px; margin: 0 auto;
+      text-align: center;
+    }
+
+    .platforms-title {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--grey); margin-bottom: 1.5rem;
+    }
+
+    .platform-links {
+      display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+
+    .platform-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .platform-link:hover { background: rgba(201, 168, 76, 0.1); border-color: rgba(201, 168, 76, 0.4); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--navy); }
+
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(138, 154, 181, 0.12);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+
+    .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
+    .testimonial-text { font-size: 0.9rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-name { font-weight: 600; color: var(--white); font-size: 0.85rem; }
+    .testimonial-role { font-size: 0.75rem; color: var(--gold); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner-inner { max-width: 700px; margin: 0 auto; }
+
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--white); margin-bottom: 1rem;
+    }
+
+    .cta-banner p { color: var(--grey); margin-bottom: 2rem; font-size: 1rem; }
+
+    .cta-banner-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060e1a;
+      padding: 3rem 2rem 1.5rem;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+
+    .footer-brand-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.7; margin-bottom: 1rem; }
+
+    .footer-col-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1rem; }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a { color: var(--grey); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(138, 154, 181, 0.1);
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+
+    .footer-copy { font-size: 0.8rem; color: var(--grey); }
+    .footer-copy a { color: var(--gold); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-image-wrap { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .episodes-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .episodes-grid { grid-template-columns: 1fr; }
+      .about-credentials { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">Y</div>
+      <div class="nav-logo-text">
+        Yeukai Business Show
+        <span>UK's Premier Business Podcast</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#episodes">Episodes</a></li>
+      <li><a href="#listen">Listen</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+    </ul>
+    <a href="https://www.kajidoricollective.co.uk" class="nav-cta" target="_blank">Work With Yeukai</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">iTunes Ranked #3 Top Business Show</div>
+        <h1>Where Business<br/>Leaders Share<br/><em>Real Secrets</em></h1>
+        <p class="hero-sub">550+ conversations with entrepreneurs, executives, and innovators from around the world. Hosted by Yeukai Kajidori — health and social care leader, author, and founder of The Kajidori Collective.</p>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num">550+</span>
+            <span class="hero-stat-label">Episodes</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">8</span>
+            <span class="hero-stat-label">Years Running</span>
+          </div>
+          <div>
+            <span class="hero-stat-num">#3</span>
+            <span class="hero-stat-label">iTunes Rank</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#episodes" class="btn-primary">Browse Episodes</a>
+          <a href="#listen" class="btn-outline">Listen Now</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-frame">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Yeukai Kajidori — Host of the Yeukai Business Show" />
+          <div class="hero-rank-badge">
+            <span class="rank-num">#3</span>
+            <span class="rank-text">iTunes Top Show</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA BAR -->
+  <div class="media-bar">
+    <div class="media-bar-inner">
+      <span class="media-label">As Featured On</span>
+      <div class="media-logos">
+        <span class="media-logo bbc">BBC</span>
+        <span class="media-logo">ITV</span>
+        <span class="media-logo sky">SKY</span>
+        <span class="media-logo">21st Century Fox</span>
+        <span class="media-logo">Trinity Mirror</span>
+        <span class="media-logo">Daily Mirror</span>
+        <span class="media-logo">Sunday Mirror</span>
+        <span class="media-logo">CBS Radio</span>
+        <span class="media-logo">Bloomberg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <p class="section-label">The Host</p>
+          <h2 class="section-title">Yeukai Kajidori</h2>
+          <div class="divider"></div>
+          <p class="section-body">Yeukai Kajidori is a health and social care leader with over 20 years of experience, an MBA, Level 7 qualifications in Health and Social Care and Strategic Management, and a CQC Registered Healthcare Operations Manager.</p>
+          <p class="section-body">From 2016 to 2024, he hosted the Yeukai Business Show — interviewing over 550 global business leaders, entrepreneurs, and innovators. The show reached iTunes Rank #3 and was featured by BBC, ITV, Sky, Bloomberg, and CBS Radio.</p>
+          <p class="section-body">Today, Yeukai leads <strong style="color: var(--gold);">The Kajidori Collective</strong> — a specialist training, consulting, and mentoring practice for health and social care organisations across the UK.</p>
+          <div class="about-quote">
+            "Every great leader I interviewed had one thing in common: they never stopped learning. This show exists to share those lessons with the world."
+          </div>
+        </div>
+        <div>
+          <div class="about-credentials">
+            <div class="credential-card">
+              <div class="cred-icon">🎓</div>
+              <div class="cred-title">MBA</div>
+              <div class="cred-body">Master of Business Administration</div>
+            </div>
+            <div class="credential-card">
+              <div class="cred-icon">📋</div>
+              <div class="cred-title">Level 7 HSC</div>
+              <div class="cred-body">Health & Social Care Leadership</div>
+            </div>
+            <div class="credential-card">
+              <div class="cred-icon">🏆</div>
+              <div class="cred-title">Level 7 Strategic</div>
+              <div class="cred-body">Strategic Management</div>
+            </div>
+            <div class="credential-card">
+              <div class="cred-icon">✅</div>
+              <div class="cred-title">CQC Registered</div>
+              <div class="cred-body">Healthcare Operations Manager</div>
+            </div>
+            <div class="credential-card">
+              <div class="cred-icon">📖</div>
+              <div class="cred-title">Published Author</div>
+              <div class="cred-body">"Eight Qualities for Great Leadership"</div>
+            </div>
+            <div class="credential-card">
+              <div class="cred-icon">🎙️</div>
+              <div class="cred-title">550+ Interviews</div>
+              <div class="cred-body">Global business leaders, 2016–2024</div>
+            </div>
+          </div>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://www.kajidoricollective.co.uk" class="btn-primary" target="_blank">Work With Yeukai →</a>
+            <a href="https://www.amazon.co.uk/s?k=yeukai+kajidori" class="btn-outline" target="_blank">Buy His Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EPISODES -->
+  <section class="episodes" id="episodes">
+    <div class="section-inner">
+      <p class="section-label">The Archive</p>
+      <h2 class="section-title">550+ Conversations with the World's Best</h2>
+      <div class="divider"></div>
+      <p class="section-body">Eight years of interviews covering leadership, entrepreneurship, finance, mental health, social care, technology, and personal development. Every episode is a masterclass.</p>
+
+      <div class="episodes-grid">
+        <div class="episode-card">
+          <div class="ep-num">Featured Episode</div>
+          <div class="ep-title">How to Build a Business That Runs Without You</div>
+          <div class="ep-guest">Norman Farrar — Vision, Growth & Profit Strategist</div>
+          <div class="ep-topic">Entrepreneurship · Systems · Scale</div>
+        </div>
+        <div class="episode-card">
+          <div class="ep-num">Featured Episode</div>
+          <div class="ep-title">The Secrets of Entrepreneurial Resilience</div>
+          <div class="ep-guest">Ray D. Zinn — Inventor & Entrepreneur</div>
+          <div class="ep-topic">Leadership · Resilience · Innovation</div>
+        </div>
+        <div class="episode-card">
+          <div class="ep-num">Featured Episode</div>
+          <div class="ep-title">Turning Your Expertise Into a Movement</div>
+          <div class="ep-guest">Charlene Walters — Entrepreneurship Coach</div>
+          <div class="ep-topic">Personal Brand · Coaching · Impact</div>
+        </div>
+        <div class="episode-card">
+          <div class="ep-num">Featured Episode</div>
+          <div class="ep-title">Financial Freedom: The Real Path</div>
+          <div class="ep-guest">Dr. Johanna Poganis — Author & Speaker</div>
+          <div class="ep-topic">Finance · Mindset · Wealth</div>
+        </div>
+        <div class="episode-card">
+          <div class="ep-num">Featured Episode</div>
+          <div class="ep-title">Building a Dream Career From Scratch</div>
+          <div class="ep-guest">Inge Dowden — Business & Career Coach</div>
+          <div class="ep-topic">Career · Coaching · Purpose</div>
+        </div>
+        <div class="episode-card">
+          <div class="ep-num">Featured Episode</div>
+          <div class="ep-title">Love, Business & Partnership That Works</div>
+          <div class="ep-guest">Baba Richard & Sri Namaste Moore — Infinite Couple</div>
+          <div class="ep-topic">Relationships · Business · Balance</div>
+        </div>
+      </div>
+
+      <div class="episodes-cta">
+        <p style="color: var(--grey); margin-bottom: 1.5rem;">These are just 6 of 550+ episodes. Search the full archive on your favourite platform.</p>
+        <a href="#listen" class="btn-primary">Find All Episodes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTEN PLATFORMS -->
+  <div class="platforms" id="listen">
+    <div class="platforms-inner">
+      <p class="platforms-title">Listen on your favourite platform</p>
+      <div class="platform-links">
+        <a href="https://podcasts.apple.com/search?term=yeukai+business+show" class="platform-link" target="_blank">
+          🎵 Apple Podcasts
+        </a>
+        <a href="https://open.spotify.com/search/yeukai%20business%20show" class="platform-link" target="_blank">
+          🎧 Spotify
+        </a>
+        <a href="https://www.amazon.co.uk/music/search/yeukai+business+show" class="platform-link" target="_blank">
+          📻 Amazon Music
+        </a>
+        <a href="https://podcasts.google.com/search/yeukai+business+show" class="platform-link" target="_blank">
+          🔊 Google Podcasts
+        </a>
+        <a href="https://www.stitcher.com/search?q=yeukai+business+show" class="platform-link" target="_blank">
+          📡 Stitcher
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <p class="section-label">What Guests Say</p>
+      <h2 class="section-title">Voices from the Show</h2>
+      <div class="divider"></div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Yeukai is one of the most prepared and thoughtful interviewers I have spoken with. He asks the questions that actually matter to entrepreneurs."</p>
+          <div class="testimonial-name">Norman Farrar</div>
+          <div class="testimonial-role">Vision, Growth & Profit Strategist</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"A genuine conversation, not just an interview. Yeukai has a rare ability to make you feel heard while drawing out insights you didn't know you had."</p>
+          <div class="testimonial-name">Charlene Walters</div>
+          <div class="testimonial-role">Entrepreneurship Coach & Author</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Yeukai Business Show consistently delivers high-quality content for entrepreneurs. Eight years and 550 episodes — that is a remarkable body of work."</p>
+          <div class="testimonial-name">Inge Dowden</div>
+          <div class="testimonial-role">Business & Dream Career Coach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Ready to Work with Yeukai?</h2>
+      <p>The Yeukai Business Show was always about one thing: helping people succeed. That mission continues through The Kajidori Collective — specialist training, consulting, and mentoring for health and social care organisations across the UK.</p>
+      <div class="cta-banner-actions">
+        <a href="https://www.kajidoricollective.co.uk" class="btn-primary" target="_blank">Visit The Kajidori Collective →</a>
+        <a href="https://www.kajidoricollective.co.uk/contact" class="btn-outline" target="_blank">Book a Discovery Call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Yeukai Business Show</div>
+        <p class="footer-brand-desc">UK's Premier Business Podcast. 550+ interviews with global business leaders, entrepreneurs, and innovators. Hosted by Yeukai Kajidori, 2016–2024.</p>
+        <p style="font-size: 0.8rem; color: var(--grey);">Featured on BBC, ITV, Sky, Bloomberg, CBS Radio, and more.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Yeukai</a></li>
+          <li><a href="#episodes">Episode Archive</a></li>
+          <li><a href="#listen">Listen Now</a></li>
+          <li><a href="#testimonials">Guest Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Yeukai's Work</div>
+        <ul class="footer-links">
+          <li><a href="https://www.kajidoricollective.co.uk" target="_blank">The Kajidori Collective</a></li>
+          <li><a href="https://www.kajidoricollective.co.uk/contact" target="_blank">Book a Discovery Call</a></li>
+          <li><a href="https://www.amazon.co.uk/s?k=yeukai+kajidori" target="_blank">Buy His Book on Amazon</a></li>
+          <li><a href="https://www.linkedin.com/in/yeukai-kajidori" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 Yeukai Business Show. All rights reserved. | <a href="https://www.kajidoricollective.co.uk" target="_blank">The Kajidori Collective</a></p>
+      <p class="footer-copy" style="font-style: italic;">Empowering entrepreneurs since 2016.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
