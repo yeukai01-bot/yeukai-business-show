@@ -1,0 +1,24 @@
+# Netlify Redirects — Yeukai Business Show
+# Preserves all backlinks and SEO equity from the 2015–2024 site
+
+# Old episode/post URLs → homepage (301 permanent redirect preserves link equity)
+/episodes/*          /          301
+/podcast/*           /          301
+/blog/*              /          301
+/post/*              /          301
+/category/*          /          301
+/tag/*               /          301
+/author/*            /          301
+/page/*              /          301
+/wp-content/*        /          301
+/wp-admin/*          /          301
+/wp-login.php        /          301
+/feed                /          301
+/feed/*              /          301
+/rss                 /          301
+/rss/*               /          301
+/sitemap.xml         /          200
+/robots.txt          /robots.txt 200
+
+# Catch-all: any unmatched URL → homepage (preserves all old backlinks)
+/*                   /          301
